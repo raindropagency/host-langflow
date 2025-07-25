@@ -2,9 +2,11 @@ services:
   - type: web
     name: langflow
     env: python
-    plan: free  # or 'starter' if you're using paid plan
-    buildCommand: pip install -r requirements.txt
-    startCommand: langflow run
+    plan: free
+    buildCommand: |
+      pip install poetry
+      poetry install
+    startCommand: poetry run langflow run --load-file Raindrop Basic Chat.json
     envVars:
       - key: LANGFLOW_ENV
         value: production

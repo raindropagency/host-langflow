@@ -6,7 +6,7 @@ services:
     buildCommand: |
       pip install poetry
       poetry install
-    startCommand: poetry run langflow run --host 0.0.0.0 --port 10000 --load-file Raindrop Basic Chat.json
+    startCommand: poetry run langflow run --host 0.0.0.0 --port 10000 --load-file raindrop-basic-chat.json
     envVars:
       - key: LANGFLOW_ENV
         value: production
